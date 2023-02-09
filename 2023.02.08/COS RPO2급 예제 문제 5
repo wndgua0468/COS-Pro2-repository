@@ -1,0 +1,20 @@
+int solution(int price, char* grade) {
+	int answer = 0;
+	double percent; // 등급 퍼센트율 
+    int sale; // 할인 금액
+    
+    //grade가 "S"일 시 할인율 5%
+	if(grade == "S") percent = 0.05;
+    //grade가 "G"일 시 할인율 10%
+	else if(grade == "G") percent = 0.1;
+    //grade가 "S"도 아니고 "G"도 아니고 "V"일 시 할인율 15%
+	else percent = 0.15;
+    
+    //가격 * 할인율로 금액에서 뺄 할인금액 구하기 
+	sale = price * percent;
+    
+    //가격에서 할인금액 뺀 총 금액 구하기 
+	answer = price - sale;
+    
+	return answer;
+}

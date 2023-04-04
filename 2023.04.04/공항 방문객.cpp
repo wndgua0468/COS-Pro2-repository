@@ -35,6 +35,7 @@ int solution(int visitor[], size_t visitor_m)
     int* visitor_removed = func_a(visitor, visitor_m, max_first);
     int max_second = func_c(visitor_removed, visitor_m-1);
     int answer = func_b(max_first, max_second);
+    free(visitor_removed); // 메모리 해제
     return answer;
 }
 
